@@ -8,23 +8,23 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/AdminLTE-3.2.0.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/dist/css/AdminLTE-3.2.0.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="<?php echo ADMIN_LTE ?>/plugins/summernote/summernote-bs4.min.css">
 
   <style>
     .content-wrapper{
@@ -177,8 +177,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTE-3.2.0Logo.png" alt="AdminLTE-3.2.0 Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE-3.2.0 3</span>
+      <img src="dist/img/<?php echo ADMIN_LTE ?>Logo.png" alt="<?php echo ADMIN_LTE ?> Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"><?php echo ADMIN_LTE ?> 3</span>
     </a>
 
     <!-- Sidebar -->
@@ -752,7 +752,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://AdminLTE-3.2.0.io/docs/3.1/" class="nav-link">
+            <a href="https://<?php echo ADMIN_LTE ?>.io/docs/3.1/" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Documentation</p>
             </a>
