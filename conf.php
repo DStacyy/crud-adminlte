@@ -29,5 +29,5 @@ if($is_localhost){
 }
 
 //path utk adminlte
-define('ADMIN_LTE', BASE_URL . 'adminlte');
+define('ADMIN_LTE', BASE_URL . '/adminlte');
 ?>

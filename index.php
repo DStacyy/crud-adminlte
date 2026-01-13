@@ -13,12 +13,67 @@ include 'template/header.php';
             <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
+            
           </div><!-- /.col -->
         </div><!-- /.row -->
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="fas fa-box"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Barang</span>
+                <span class="info-box-number">1,410</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fas fa-shopping-cart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Stok</span>
+                <span class="info-box-number">410</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row">
+            <!-- /.col-md-6 -->
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title m-0">Selamat Datang di Aplikasi CRUD Barang</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Aplikasi Ini Digunakan Wes Mbuh</h6>
+
+                <p class="card-text">Fitur yang tersedia:</p>
+                <ul>
+                  <li>Menampilkan data barang</li>
+                  <li>Menambah data barang baru</li>
+                  <li>Mengedit data barang</li>
+                  <li>Menghapus data barang</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.col-md-6 -->
+          </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
