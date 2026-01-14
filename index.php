@@ -25,7 +25,7 @@ include 'template/header.php';
                 <span class="info-box-text">Total Barang</span>
                 <?php
                 $query = "SELECT COUNT(stok) as total_stok FROM barang";
-                $result = mysqli_query($koneksi, $query);
+                $result = mysqli_query($conn, $query);
                 $data = mysqli_fetch_assoc($result);
                 ?>
                 <span class="info-box-number"><?=$data['total_stok'] ?></span>
@@ -41,7 +41,12 @@ include 'template/header.php';
 
               <div class="info-box-content">
                 <span class="info-box-text">Total Stok</span>
-                <span class="info-box-number">410</span>
+                <?php
+                $query = "SELECT SUM(stok) as total_stok FROM barang";
+                $result = mysqli_query($conn, $query);
+                $data = mysqli_fetch_assoc($result);
+                ?>
+                <span class="info-box-number"><?=$data['total_stok'] ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
