@@ -22,30 +22,47 @@ $message = getMessage();
             <div class="col-12">
                 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title">Daftar Barang</h3>
+                <div class="card-tools">
+                    <a href="tambah.php" class="btn btn-primary btn-sm">Tambah Barang</a>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>Id</th>
+                    <th>Nama Barang</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
+                    <?php
+                    $query = "SELECT * FROM barang ORDER BY id DESC";
+                    $result = mysqli_prepare($conn, $query);
+                    mysqli_stmt_execute($result);
+                    $result = mysqli_stmt_get_result($result);
+                    $no = 1;
+                    while ($row = mysqli_fetch_assoc($result)):
+                    ?>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
+                    <td><?= $no++ ?></td>
+                    <td><?= $row['nama_barang']?></td>
+                    <td><?= $row['kategori']?></td>
+                    <td><?= $row['harga']?></td>
+                    <td><?= $row['stok']?></td>
+                    <td><?= $row['deskripsi']?> </td>
+                    <td>
+                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="" class="btn btn-danger">Hapus</a>
                     </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
                   </tr>
+                  <?php endwhile; ?>
                   </tbody>
                   
                 </table>
