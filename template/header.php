@@ -215,7 +215,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php ADMIN_LTE ?>adminlte/pages/widgets.html" class="nav-link">
+            <a href="<?php ADMIN_LTE ?>add.php" class="nav-link">
               <i class="nav-icon fas fa-plus"></i>
               <p>
                 Tambah Barang
