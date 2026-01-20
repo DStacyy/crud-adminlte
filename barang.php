@@ -57,10 +57,14 @@ $message = getMessage();
                     <td><?= $row['harga']?></td>
                     <td><?= $row['stok']?></td>
                     <td><?= $row['deskripsi']?> </td>
-                    <td>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                    </td>
+                    <td class="text-center">
+    <div class="btn-group" role="group">
+        <a href="" class="btn btn-warning btn-sm mr-1">Edit</a>
+        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+    </div>
+</td>
+
+
                   </tr>
                   <?php endwhile; ?>
                   </tbody>

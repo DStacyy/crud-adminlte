@@ -1,16 +1,28 @@
 <?php
 include 'conf.php';
-include 'template/header.php';
 
 $message = getMessage();
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $nama_barang = mysqli_real_escape_string($conn, $_POST['nama_barang']);
-    $harga = mysqli_real_escape_string($conn, $_POST['harga']);
-    $stok = mysqli_real_escape_string($conn, $_POST['stok']);
-    $kategori = mysqli_real_escape_string($conn, $_POST['kategori']);
-    $deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nama_barang  = mysqli_real_escape_string($conn, $_POST['nama_barang']);
+    $harga_barang = mysqli_real_escape_string($conn, $_POST['harga_barang']);
+    $stok         = mysqli_real_escape_string($conn, $_POST['stok']);
+    $kategori     = mysqli_real_escape_string($conn, $_POST['kategori']);
+    $deskripsi    = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+    
+    $query = "INSERT INTO barang (nama_barang, kategori, harga, stok, deskripsi)
+              VALUES ('$nama_barang', '$kategori', '$harga_barang', '$stok', '$deskripsi')";
+
+if (mysqli_query($conn, $query)) {
+    showMessage('success', 'Data barang berhasil ditambahkan');
+    header('Location: barang.php');
+    exit();
+    } else {
+        showMessage('danger', 'Data barang gagal ditambahkan: ' . mysqli_error($conn));
+    }
 }
+
+include 'template/header.php';
 
 ?>
 
