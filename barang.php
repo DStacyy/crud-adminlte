@@ -24,7 +24,7 @@ $message = getMessage();
               <div class="card-header">
                 <h3 class="card-title">Daftar Barang</h3>
                 <div class="card-tools">
-                    <a href="tambah.php" class="btn btn-primary btn-sm">Tambah Barang</a>
+                    <a href="add.php" class="btn btn-primary btn-sm">Tambah Barang</a>
                 </div>
               </div>
               <!-- /.card-header -->

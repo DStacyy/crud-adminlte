@@ -28,34 +28,41 @@ $message = getMessage();
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="POST" action="">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label for="nama_barang">Nama Barang</label>
+                    <input type="text" class="form-control" id="nama_barang" placeholder="Nama Barang" name="nama_barang" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
+                 <div class="form-group">
+                        <label for="kategori">Kategori</label>
+                        <select class="form-control" id="kategori" name="kategori" required>
+                          <option value="">Pilih Kategori</option>
+                          <option value="Elektronik">Elektronik</option>
+                          <option value="Furniture">Furniture</option>
+                          <option value="Buku">Buku</option>
+                          <option value="Aksesoris">Aksesoris</option>
+                          <option value="Lainnya">Lainnya</option>
+                        </select>
+                      </div>
+                <div class="form-group">
+                    <label for="harga_barang">Harga Barang (Rp)</label>
+                    <input type="number" class="form-control"
+                     id="harga_barang" placeholder="Harga Barang" name="harga_barang" required>
+                </div>
+                <div class="form-group">
+                    <label for="stok">Stok Barang</label>
+                    <input type="number" class="form-control"
+                     id="stok" placeholder="Stok" name="stok" required>
+                </div>
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi Barang</label>
+                    <textarea type="number" class="form-control"
+                     id="deskripsi" placeholder="Deskripsi Barang" name="deskripsi" required></textarea>
+                </div>
+
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
