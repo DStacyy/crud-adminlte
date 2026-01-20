@@ -60,12 +60,12 @@ $message = getMessage();
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi Barang</label>
                     <textarea type="number" class="form-control"
-                     id="deskripsi" placeholder="Deskripsi Barang" name="deskripsi" required></textarea>
+                     id="deskripsi" placeholder="Deskripsi Barang" name="deskripsi" rows="4" required></textarea>
                 </div>
 
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
               </form>
             </div>
