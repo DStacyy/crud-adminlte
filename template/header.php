@@ -201,7 +201,7 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
@@ -210,7 +210,7 @@
               <i class="nav-icon fas fa-box"></i>
               <p>
                 Data Barang
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
@@ -219,7 +219,7 @@
               <i class="nav-icon fas fa-plus"></i>
               <p>
                 Tambah Barang
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>

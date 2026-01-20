@@ -77,7 +77,7 @@ include 'template/header.php';
                   <li>Mengedit data barang</li>
                   <li>Menghapus data barang</li>
                 </ul>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="barang.php" class="btn btn-primary">Data Barang</a>
               </div>
             </div>
 
