@@ -3,6 +3,15 @@ include 'conf.php';
 include 'template/header.php';
 
 $message = getMessage();
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $nama_barang = mysqli_real_escape_string($conn, $_POST['nama_barang']);
+    $harga = mysqli_real_escape_string($conn, $_POST['harga']);
+    $stok = mysqli_real_escape_string($conn, $_POST['stok']);
+    $kategori = mysqli_real_escape_string($conn, $_POST['kategori']);
+    $deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+}
+
 ?>
 
 <div class="content-wrapper">
