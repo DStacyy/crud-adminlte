@@ -59,8 +59,9 @@ $message = getMessage();
                     <td><?= $row['deskripsi']?> </td>
                     <td class="text-center">
     <div class="btn-group" role="group">
-        <a href="" class="btn btn-warning btn-sm mr-1">Edit</a>
-        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+        <a href="edit.php?id=<?=$row['id']?>" class="btn btn-warning btn-sm mr-1">Edit</a>
+        <a href="del.php" class="btn btn-block btn-outline-danger btn-sm"
+        onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
     </div>
 </td>
 
