@@ -1,15 +1,43 @@
 <?php
 include 'conf.php';
 
-if (!isset(($_GET ['id']))){
+if (!isset($_GET ['id'])){
     header('Location : barang.php');
     exit();
 }
-
+//ambil data barang berdasar id
 $id = mysqli_real_escape_string($conn, $_GET['id']);
 $query = "SELECT * FROM barang WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
-$br = mysqli_fetch_assoc($result);
+$brg = mysqli_fetch_assoc($result);
+
+if (!$brg){
+    showMessage('danger', 'Data barang tidak ditemukan');
+}
+
+// PROSES EDIT DATA
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nama_barang  = mysqli_real_escape_string($conn, $_POST['nama_barang']);
+    $kategori     = mysqli_real_escape_string($conn, $_POST['kategori']);
+    $harga_barang = mysqli_real_escape_string($conn, $_POST['harga_barang']);
+    $stok         = mysqli_real_escape_string($conn, $_POST['stok']);
+    $deskripsi    = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+
+    $update = "UPDATE barang SET 
+                nama_barang = '$nama_barang',
+                kategori = '$kategori',
+                harga = '$harga_barang',
+                stok = '$stok',
+                deskripsi = '$deskripsi'
+               WHERE id = '$id'";
+
+    if (mysqli_query($conn, $update)) {
+        showMessage('success', 'Data berhasil diupdate');
+        header("Refresh:1; url=barang.php"); // balik ke list
+    } else {
+        showMessage('danger', 'Gagal update data');
+    }
+}
 
 include 'template/header.php';
 ?>
@@ -38,7 +66,8 @@ include 'template/header.php';
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama_barang">Nama Barang</label>
-                    <input type="text" class="form-control" id="nama_barang" placeholder="Nama Barang" name="nama_barang" required>
+                    <input type="text" class="form-control" id="nama_barang" placeholder="Nama Barang" 
+                    name="nama_barang" value="<?= $brg['nama_barang'] ?>" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -46,27 +75,27 @@ include 'template/header.php';
                         <label for="kategori">Kategori</label>
                         <select class="form-control" id="kategori" name="kategori" required>
                           <option value="">Pilih Kategori</option>
-                          <option value="Elektronik">Elektronik</option>
-                          <option value="Furniture">Furniture</option>
-                          <option value="Buku">Buku</option>
-                          <option value="Aksesoris">Aksesoris</option>
-                          <option value="Lainnya">Lainnya</option>
+                          <option value="Elektronik" <?= ($brg['kategori'] == 'Elektronik')? 'selected' : '' ?>>Elektronik</option>
+                          <option value="Furniture" <?= ($brg['kategori'] == 'Furniture')? 'selected' : '' ?>>Furniture</option>
+                          <option value="Buku" <?= ($brg['kategori'] == 'Buku')? 'selected' : '' ?>>Buku</option>
+                          <option value="Aksesoris" <?= ($brg['kategori'] == 'Aksesoris')? 'selected' : '' ?>>Aksesoris</option>
+                          <option value="Lainnya" <?= ($brg['kategori'] == 'Lainnya')? 'selected' : '' ?>>Lainnya</option>
                         </select>
                       </div>
                 <div class="form-group">
                     <label for="harga_barang">Harga Barang (Rp)</label>
                     <input type="number" class="form-control"
-                     id="harga_barang" placeholder="Harga Barang" name="harga_barang" required>
+                     id="harga_barang" placeholder="Harga Barang" name="harga_barang" required value="<?= $brg['harga'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="stok">Stok Barang</label>
                     <input type="number" class="form-control"
-                     id="stok" placeholder="Stok" name="stok" required>
+                     id="stok" placeholder="Stok" name="stok" required value="<?= $brg['stok'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi Barang</label>
                     <textarea type="number" class="form-control"
-                     id="deskripsi" placeholder="Deskripsi Barang" name="deskripsi" rows="4" required></textarea>
+                     id="deskripsi" placeholder="Deskripsi Barang" name="deskripsi" rows="4" required><?= $brg['deskripsi'] ?></textarea>
                 </div>
 
 
