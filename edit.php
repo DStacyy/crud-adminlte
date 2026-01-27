@@ -32,10 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                WHERE id = '$id'";
 
     if (mysqli_query($conn, $update)) {
-        showMessage('success', 'Data berhasil diupdate');
-        header("Refresh:1; url=barang.php"); // balik ke list
+    showMessage('success', 'Data berhasil diupdate');
+    header("Location: barang.php");
+    exit();
     } else {
-        showMessage('danger', 'Gagal update data');
+    showMessage('danger', 'Gagal update data') . mysqli_error($conn);
     }
 }
 
@@ -67,7 +68,7 @@ include 'template/header.php';
                   <div class="form-group">
                     <label for="nama_barang">Nama Barang</label>
                     <input type="text" class="form-control" id="nama_barang" placeholder="Nama Barang" 
-                    name="nama_barang" value="<?= $brg['nama_barang'] ?>" required>
+                    name="nama_barang" value="<?= htmlspecialchars($brg['nama_barang']) ?>" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -85,7 +86,7 @@ include 'template/header.php';
                 <div class="form-group">
                     <label for="harga_barang">Harga Barang (Rp)</label>
                     <input type="number" class="form-control"
-                     id="harga_barang" placeholder="Harga Barang" name="harga_barang" required value="<?= $brg['harga'] ?>">
+                     id="harga_barang" placeholder="Harga Barang" name="harga_barang" required value="<?= htmlspecialchars($brg['harga']) ?>">
                 </div>
                 <div class="form-group">
                     <label for="stok">Stok Barang</label>
