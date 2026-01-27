@@ -78,6 +78,7 @@ include 'template/header.php';
                   <li>Menghapus data barang</li>
                 </ul>
                 <a href="barang.php" class="btn btn-primary">Data Barang</a>
+                <a href="admin.php" class="btn btn-warning ml-2">Data Admin</a>
               </div>
             </div>
 

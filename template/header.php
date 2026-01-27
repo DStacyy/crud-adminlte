@@ -215,6 +215,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?php ADMIN_LTE ?>admin.php" class="nav-link">
+              <i class="nav-icon fas fa-user-shield"></i>
+              <p>
+                Data Admin
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?php ADMIN_LTE ?>add.php" class="nav-link">
               <i class="nav-icon fas fa-plus"></i>
               <p>
@@ -223,6 +231,7 @@
               </p>
             </a>
           </li>
+
           
       <!-- /.sidebar-menu -->
     </div>
