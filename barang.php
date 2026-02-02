@@ -19,6 +19,12 @@ $message = getMessage();
         </div>
         <div class="content">
             <div class="container-fluid"></div>
+            <?php if ($message):?>
+              <div class="alert alert-dismissable alert-<?= $message['type'] ?>">
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <?php echo $message ['type'];?>
+              </div>
+              <?php endif; ?>
             <div class="col-12">
                 <div class="card">
               <div class="card-header">
