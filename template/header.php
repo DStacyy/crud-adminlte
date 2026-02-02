@@ -231,6 +231,15 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?php ADMIN_LTE ?>admin-add.php" class="nav-link">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>
+                Tambah Admin
+                
+              </p>
+            </a>
+          </li>
 
           
       <!-- /.sidebar-menu -->
