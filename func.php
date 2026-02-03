@@ -6,7 +6,7 @@ function getBarang($keyword='', $kategori=''){
     $params = array();
 
     //cek jika keyword ada nilainya, maka..
-    if(!empry ($keyword)){
+    if(!empty ($keyword)){
         $query .=" AND (nama_barang LIKE ? OR deskripsi LIKE ?)";
         $params = "%$keyword%";
         $params = "%$keyword%";
