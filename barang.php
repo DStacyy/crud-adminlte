@@ -25,6 +25,41 @@ $message = getMessage();
                 <?php echo $message ['type'];?>
               </div>
               <?php endif; ?>
+              <div class="card card primary">
+                <div class="card-header">
+                  <h3 class="card-title">Pencarian Dan Filter</h3>
+                  <div class="card-tools">
+                    <button class="btn btn-model" type="button" data-card-widget="collapse"></button>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                </div>
+                <div class="class-body">
+                  <form action="barang.php" method="GET" class="from-inline">
+                    <div class="form=-group mb-2 mr-2">
+                      <label for="keyword" class="sr-only">Kata Kunci</label>
+                      <input type="text" name="keyword">
+                    </div>
+                    <div class="form=-group mb-2 mr-2">
+                      <label for="keyword" class="sr-only">Kategori</label>
+                      <select name="kategori" id="kategori" class="form-control">
+                        <option value="semua">Semua Kategori</option>
+                        <option value="">Pilih Kategori</option>
+                          <option value="Elektronik">Elektronik</option>
+                          <option value="Furniture">Furniture</option>
+                          <option value="Buku">Buku</option>
+                          <option value="Aksesoris">Aksesoris</option>
+                          <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2 mr-2">
+                      <i class="fas fa-search">Cari</i>
+                    </button>
+                    <a href="barang.php" class="btn btn-primary mb-2 mr-2">
+                      <i class="fas fa-redo">Reset</i>
+                    </a>
+                  </form>
+                </div>
+              </div>
             <div class="col-12">
                 <div class="card">
               <div class="card-header">
