@@ -85,7 +85,7 @@ $message = getMessage();
                       Dengan kata kunci "<?= $keyword; ?>"
                       <?php endif; ?>
                   </div>
-                <?php endif; ?>
+                
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -100,10 +100,10 @@ $message = getMessage();
                   </thead>
                   <tbody>
                     <?php
-                    $query = "SELECT * FROM barang ORDER BY id DESC";
-                    $result = mysqli_prepare($conn, $query);
-                    mysqli_stmt_execute($result);
-                    $result = mysqli_stmt_get_result($result);
+                    // $query = "SELECT * FROM barang ORDER BY id DESC";
+                    // $result = mysqli_prepare($conn, $query);
+                    // mysqli_stmt_execute($result);
+                    // $result = mysqli_stmt_get_result($result);
                     $no = 1;
                     while ($row = mysqli_fetch_assoc($result)):
                     ?>
@@ -111,7 +111,7 @@ $message = getMessage();
                     <td><?= $no++ ?></td>
                     <td><?= $row['nama_barang']?></td>
                     <td><?= $row['kategori']?></td>
-                    <td><?= $row['harga']?></td>
+                    <td><?= number_format($row['harga'])?></td>
                     <td><?= $row['stok']?></td>
                     <td><?= $row['deskripsi']?> </td>
                     <td class="text-center">
@@ -128,6 +128,12 @@ $message = getMessage();
                   </tbody>
                   
                 </table>
+                <?php else: ?>
+                  <div class="alert alert-warning text-center">
+                    <i class="fas fa-exclamination-triangle"></i>
+                    Data barang tidak ditemukan.
+                  </div>
+                  <?php endif ?>
               </div>
               <!-- /.card-body -->
             </div>
