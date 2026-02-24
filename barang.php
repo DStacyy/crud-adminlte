@@ -77,6 +77,15 @@ $message = getMessage();
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <?php if(mysqli_num_rows($result)>0):?>
+                  <!-- Pesan jumlah data yang ditemukan -->
+                  <div class="alert alert-info">
+                      Ditemukan <?= mysqli_num_rows($result);?>
+                      <?php if(!empty($keyword)):?>
+                      Dengan kata kunci "<?= $keyword; ?>"
+                      <?php endif; ?>
+                  </div>
+                <?php endif; ?>
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
