@@ -1,7 +1,7 @@
 <?php
 // Fungsi untuk mendapatkan data barang dengan pencarian
 function getBarang($keyword = '', $kategori = '') {
-    global $koneksi;
+    global $conn;
     
     $query = "SELECT * FROM barang WHERE 1=1";
     $params = array();
@@ -19,7 +19,7 @@ function getBarang($keyword = '', $kategori = '') {
     
     $query .= " ORDER BY id DESC";
     
-    $stmt = mysqli_prepare($koneksi, $query);
+    $stmt = mysqli_prepare($conn, $query);
     
     if (!empty($params)) {
         $types = str_repeat('s', count($params));
@@ -34,9 +34,9 @@ function getBarang($keyword = '', $kategori = '') {
 
 // Fungsi untuk mendapatkan semua kategori unik
 function getKategori() {
-    global $koneksi;
+    global $conn;
     $query = "SELECT DISTINCT kategori FROM barang ORDER BY kategori";
-    $result = mysqli_query($koneksi, $query);
+    $result = mysqli_query($conn, $query);
     
     $kategori = array();
     while ($row = mysqli_fetch_assoc($result)) {

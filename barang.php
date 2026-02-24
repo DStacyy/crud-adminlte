@@ -1,7 +1,14 @@
 <?php
 include 'conf.php';
 include 'template/header.php';
+include 'func.php';
 
+$keyword = isset ($_GET ['keyword']) ? $_GET['keyword'] : '';
+$kategori_filter = isset ($_GET['keyword']) ? $_GET['keyword'] : '';
+
+$result = getBarang($keyword, $kategori_filter);
+
+$daftar_kategori = getKategori();
 $message = getMessage();
 ?>
 
@@ -40,15 +47,15 @@ $message = getMessage();
                       <input type="text" name="keyword">
                     </div>
                     <div class="form=-group mb-2 mr-2">
-                      <label for="keyword" class="sr-only">Kategori</label>
-                      <select name="kategori" id="kategori" class="form-control">
+                      <label for="kategori" class="sr-only">Kategori</label>
+                      <select class="form-control" id="kategori"name="kategori"  >
                         <option value="semua">Semua Kategori</option>
-                        <option value="">Pilih Kategori</option>
-                          <option value="Elektronik">Elektronik</option>
-                          <option value="Furniture">Furniture</option>
-                          <option value="Buku">Buku</option>
-                          <option value="Aksesoris">Aksesoris</option>
-                          <option value="Lainnya">Lainnya</option>
+                          <?php foreach ($daftar_kategori as $kat): ?>
+                            <option value="<?php echo htmlspecialchars($kat)? 'selected':'';?>"
+                              <?php echo ($kategori_filter == $kat) ? 'selected' : ''; ?>>
+                              <?php echo htmlspecialchars($kat);?>
+                            </option>  
+                            <?php endforeach; ?>
                       </select>
                     </div>
                     <button type="submit" class="btn btn-primary mb-2 mr-2">
